@@ -1,0 +1,88 @@
+<div class="container" style="padding-top: 40px" *ngIf="CURSO">
+    <div class="list-group">
+        <div type="button" class="list-group-item list-group-item-action active" id="div">
+            <div>
+                <img [src]="CURSO.imageUrl" width="40px" height="40px"> {{CURSO.nome}}
+            </div>
+        </div>     
+    </div>
+<form [formGroup]="cursoForm" #formDir="ngForm" (ngSubmit)="submit()">
+        
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" 
+                class="form-control" 
+                id="nome" 
+                placeholder="Digite o Nome do curso" 
+                formControlName="nome"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label for="preco">Preco</label>
+            <input 
+                type="number" 
+                class="form-control" 
+                id="preco" 
+                placeholder="Digite o Preco do curso" 
+                formControlName="price"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label for="code">Codigo</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="code" 
+                placeholder="Digite o Codigo do curso" 
+                formControlName="code"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label for="duracao">Duracao</label>
+            <input 
+                type="number" 
+                class="form-control" 
+                id="duracao" 
+                placeholder="Digite o Duracao do curso" 
+                formControlName="duracao"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label for="rating">Pontuaçâo</label>
+            <input 
+                type="number" 
+                class="form-control" 
+                id="rating" 
+                placeholder="Digite o Pontuaçâo do curso" 
+                formControlName="rating"
+                required
+            >
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <textarea 
+            type="text" 
+            class="form-control" 
+            id="descricao" 
+            placeholder="Digite o Descrição do curso" 
+            formControlName="descricao"
+            required
+            ></textarea>
+        </div>
+    <br>
+    <div class="butoes">    
+        <button type="button" class="btn btn-outline-danger" routerLink="/home">Cancelar</button>
+    </div>
+    <div class="butoes">
+       <button 
+            [disabled]="cursoForm.invalid"   
+            type="submit" 
+            class="btn btn-outline-success" 
+        >Salvar</button> 
+    </div>
+</form>
+</div>

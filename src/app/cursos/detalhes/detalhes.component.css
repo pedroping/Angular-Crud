@@ -1,0 +1,12 @@
+.butoes {
+    float: right;
+    padding-left: 10px;
+}
+
+.imagem{
+    transition: 0.3s;
+}
+
+.imagem:hover {
+    transform: scale(3.5);
+}

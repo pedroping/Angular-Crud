@@ -1,0 +1,25 @@
+<div class="container" style="padding-top: 40px" *ngIf="CURSO">
+   <div class="list-group">
+    <button type="button" class="list-group-item list-group-item-action active">
+        <img class="imagem" [src]="CURSO.imageUrl" width="40px" height="40px"> {{CURSO.nome}}
+    </button>
+    <button type="button" class="list-group-item list-group-item-action">Data de lançamento: {{CURSO.releaseDate}}</button>
+    <button type="button" class="list-group-item list-group-item-action">Preço: {{CURSO.price | currency: 'BRL'}}</button>
+    <button type="button" class="list-group-item list-group-item-action">Codigo: {{CURSO.code | trocar: '-': ' '}}</button>
+    <button type="button" class="list-group-item list-group-item-action">Prontuação: {{ CURSO.rating! | rating }}</button>
+    <button type="button" class="list-group-item list-group-item-action">Duração: {{CURSO.duracao}}</button>
+    <button type="button" class="list-group-item list-group-item-action">Descrição: {{CURSO.descricao}}</button>
+  </div> 
+  <br>
+  <div class="butoes">    
+    <button type="button" class="btn btn-outline-success" routerLink="/home">Voltar</button>
+  </div>
+
+  <div class="butoes">
+    <button type="button" class="btn btn-outline-danger" (click)="deletar(idCurso)">Deletar</button>
+  </div>
+  
+  <div class="butoes">
+    <button type="button" class="btn btn-outline-warning" routerLink="/cursos/editar/{{idCurso}}">Editar</button>
+  </div>
+</div>
